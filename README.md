@@ -2,21 +2,21 @@
 ## Desafio 1
 ### Instalando um servidor Oracle Linux 8.x em uma virtual Box 
 
-Primeiro, faça o download do Virtual Box no site:
-https://www.virtualbox.org/wiki/Downloads
-<img src="./img/Vbox.png" alt="" width="350" height="100"><br>
-<br>
+Primeiro, faça o download do Virtual Box no site:<b><b>
+https://www.virtualbox.org/wiki/Downloads <b><b>
+<img src="./img/Vbox.png" alt="" width="350" height="100">
+<b><b>
 clique em próximo até finalizar.
-
-Baixe o Oracle Linux:
-https://edelivery.oracle.com
-<img src="./img/lupa.png" alt="" width="350" height="100"><br>
-<br>
+<b><b>
+Baixe o Oracle Linux:<b><b>
+https://edelivery.oracle.com<b><b>
+<img src="./img/lupa.png" alt="" width="350" height="100"><b><b>
+<b><b>
 Faça login ou crie uma nova conta
 Busque por Oracle Linux
-Escolha a versão 8.1
-<img src="./img/login oracle.png" alt="" width="350" height="100"><br>
-<br>
+Escolha a versão 8.1<b><b>
+<img src="./img/login oracle.png" alt="" width="350" height="100">
+<b><b>
 
 Em plataformas e idiomas clique seta para baixo e selecione a arquitetura da sua plataforma e clique em continuar
 Revise e assine os termos de adesão e clique na caixa de seleção para aceitar o contrato de licença e clique no botão continuar
@@ -66,9 +66,9 @@ Reinicie o serviço de rede após editar o arquivo com o comando;
 
 Faça o mesmo na outra VM
 Para finalizar essa etapa vamos verificar se as duas VMs conversam usando o camando ping e o IP da outra VM. 
-A resposta será parecida com a imagem:
-<img src="./img/ping.png" alt="" width="350" height="100"><br>
-<br>
+A resposta será parecida com a imagem:<b><b>
+<img src="./img/ping.png" alt="" width="350" height="100">
+<b><b>
 
 ### Criando um NFS do servidor 1 para o servidor 2. 
 
