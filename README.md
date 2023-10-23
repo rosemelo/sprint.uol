@@ -121,11 +121,7 @@ Eu tive problemas com o firewall, ele não estava habilitado e aparecia a inform
     sudo systemctl enable firewalld
 Você também pode conferir:
     sudo systemctl status firewalld
-Mas se der tudo certo você verá a seguinte imagem:
-
-<b><b>
-
-Vamos iniciar o NFS;
+Vamos iniciar o NFS:
     sudo systemctl enable --now nfs-server
     showmount -e
 
