@@ -16,8 +16,6 @@ Faça login ou crie uma nova conta
 Busque por Oracle Linux
 Escolha a versão 8.1<b><b>
 
-<b><b>
-
 Em plataformas e idiomas clique seta para baixo e selecione a arquitetura da sua plataforma e clique em continuar
 Revise e assine os termos de adesão e clique na caixa de seleção para aceitar o contrato de licença e clique no botão continuar
 
@@ -74,13 +72,12 @@ Você também pode reiniciar apenas a interface:
     ifup enp0s3
 
 Para testar a conexão, você pode ir no PowerShell e digitar o seguinte comando:
-ssh <seu-nome-de-usuario-da-vm-destino>@<o-ip-da-vm-destino> Ex.:
+    ssh <seu-nome-de-usuario-da-vm-destino>@<o-ip-da-vm-destino> Ex.:
     ssh melocouto@192.168.0.30
 O sistema irá perguntar se deseja conectar.
 Responda sim, coloque sua senha de usuário e a conexão é estabelecida
 Faça o mesmo na outra VM
 Para finalizar essa etapa vamos verificar se as duas VMs conversam usando o comando ping e o IP da outra VM em cada uma. 
-A resposta será parecida com a imagem:<b><b>
 
 <b><b>
 
@@ -98,7 +95,7 @@ Crie também alguns arquivos de teste:
     echo "Estamos criando um arquivo de texto compartilhado." | sudo tee /nfs-share/shared-text.txt > /dev/null
 Verifique os arquivos criados:
     ls -lh /nfs-share
-    Você verá um resultado como o da imagem:
+    
     
 <b><b>
 Como é só um exercício, vamos alterar as opções de compartilhamnento, assim não precisaremos incluir várias opções na configuração ok?
@@ -131,11 +128,6 @@ Mas se der tudo certo você verá a seguinte imagem:
 Vamos iniciar o NFS;
     sudo systemctl enable --now nfs-server
     showmount -e
-
-
-
-
-
 
 
 ## Desafio 3
