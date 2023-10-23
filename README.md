@@ -52,12 +52,12 @@ Você pode acessar o arquivo onde estão as informações referente ao IP da sua
     sudo nano /etc/sysconfig/network-scripts/ifcfg-enp0s3
 Dentro desse arquivo iremos alterar alguns itens e x será um número escolhido por você para definir a sua rede:
 
-BOOTPROTO= none
-IPADDR= 192.168.X.XX
-PREFIXO= 24
-GATEWAY= 192.168.x.x
-DNS1= 8.8.8.8
-DNS2= 8.8.4.4
+<b>BOOTPROTO= none
+<b>IPADDR= 192.168.X.XX
+<b>PREFIXO= 24
+<b>GATEWAY= 192.168.x.x
+<b>DNS1= 8.8.8.8
+<b>DNS2= 8.8.4.4
 
 Eu usei o DNS público do Google, mas você pode utilizar outros, procure sempre DNS confiáveis
 
@@ -65,21 +65,26 @@ Feito isso, irá salvar
 Ctrl + O
 e sair:
 Ctrl + X
-Reinicie o serviço de rede após editar o arquivo com o comando:
+
+
+Reinicie o serviço de rede após editar o arquivo com o comando
     systemctl restart NetworkManager
-Você também pode reiniciar apenas a interface:
+
+
+Você também pode reiniciar apenas a interface
     ifdown enp0s3
     ifup enp0s3
 
-Para testar a conexão, você pode ir no PowerShell e digitar o seguinte comando:
+Para testar a conexão, você pode ir no PowerShell e digitar o seguinte comando
     ssh <seu-nome-de-usuario-da-vm-destino>@<o-ip-da-vm-destino> Ex.:
     ssh melocouto@192.168.0.30
+
 O sistema irá perguntar se deseja conectar.
 Responda sim, coloque sua senha de usuário e a conexão é estabelecida
 Faça o mesmo na outra VM
 Para finalizar essa etapa vamos verificar se as duas VMs conversam usando o comando ping e o IP da outra VM em cada uma. 
 
-<b><b>
+
 
 ### Criando um NFS do servidor 1 para o servidor 2. 
 Vamos estabelecer que uma vm será o cliente e a outra o servidor, então no servidor, instale os pacotes de utilitários do NFS com o comando:
@@ -101,7 +106,7 @@ Verifique os arquivos criados:
 Como é só um exercício, vamos alterar as opções de compartilhamnento, assim não precisaremos incluir várias opções na configuração ok?
 Então vamos dar permissão total:
     sudo chmod -R 777 /nfs-share
-Agora vomos definir com quem iremos compartilhar, que será a nossa vm cliente:
+Agora vomos definir com quem iremos compartilhar, que será a nossa vm cliente
     echo "/nfs-share <ip_vm_cliente>(rw)" | sudo tee -a /etc/exports > /dev/null
 Agora vamos definir o tráfego NFS:
 Vamos defini-lo como permanente e depois mostrar o tráfego permitido.
@@ -112,16 +117,17 @@ Vamos defini-lo como permanente e depois mostrar o tráfego permitido.
 
 Ative o serciço NFS:
     sudo systemctl enable --now nfs-server
-E mostre quais serviços estão disponíveis usando o serviço NFS:
+E mostre quais serviços estão disponíveis usando o serviço NFS
     showmount -e
 
-Eu tive problemas com o firewall, ele não estava habilitado e aparecia a informação "Firewalld is not running",  então eu segui os comandos:
+Eu tive problemas com o firewall, ele não estava habilitado e aparecia a informação "Firewalld is not running",  então eu segui os comandos
+<b>
     sudo yum install firewalld
     sudo systemctl start firewalld
     sudo systemctl enable firewalld
-Você também pode conferir:
+Você também pode conferir
     sudo systemctl status firewalld
-Vamos iniciar o NFS:
+Vamos iniciar o NFS
     sudo systemctl enable --now nfs-server
     showmount -e
 
